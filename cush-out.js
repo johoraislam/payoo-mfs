@@ -1,26 +1,25 @@
-const btnform = document.getElementById('form-btn');
+const cushOut = document.getElementById('cushOut-btn');
 
-
-btnform.addEventListener('click',(e) =>{
+cushOut.addEventListener('click',(e) =>{
     e.preventDefault();
 
     // get input filed
-    const addAmount = document.getElementById('amount').value;
+    const addAmount = document.getElementById('cush-out').value;
 
     // get pin number
-    const pinNumber = document.getElementById('pass').value;
+    const cushOutPinNumber = document.getElementById('cush-out-pin').value;
     
     // verifyed pin number
 
-    if(pinNumber === '12345'){
+    if(cushOutPinNumber === '12345'){
         // alert('you are logged')
         // get corrent money
         const balance = document.getElementById('balance').innerText;
-        console.log(balance)
+        // console.log(balance)
 
         // add addAmount with corrent moeny
 
-        const newBlance = Number(addAmount) + Number(balance)
+        const newBlance = Number(balance) - Number(addAmount)
 
         //display new balane in the ui
         
@@ -28,5 +27,3 @@ btnform.addEventListener('click',(e) =>{
     }
     else{alert('type correct pin number')}
 })
-
-
